@@ -1,6 +1,6 @@
 {
   "name": "wepy-modal",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "An amazing modal component created for wepy development",
   "main": "index.js",
   "scripts": {
@@ -12,6 +12,11 @@
     "modal",
     "dialog"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:hanxiansen/wepy-modal.git"
+  },
+  "homepage": "https://github.com/hanxiansen/wepy-modal#readme",
   "author": "hanshan",
   "license": "MIT",
   "_from": "wepy-modal@1.0.0",
