@@ -1,7 +1,7 @@
 {
   "name": "wepy-modal",
   "version": "1.0.1",
-  "description": "A amazing modal component created for wepy development",
+  "description": "An amazing modal component created for wepy development",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
