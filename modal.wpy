@@ -1,10 +1,9 @@
 <style lang="less">
-
-.btn {
-  padding: 10px 0;
-  border: 1rpx solid #eee;
-}
-.h-modal{
+  .btn {
+    padding: 10px 0;
+    border: 1rpx solid #eee;
+  }
+  .h-modal{
     position: fixed;
     overflow: auto;
     top: 0;
@@ -119,7 +118,7 @@
         color: #009ee2;
       }
     }
-}
+  }
 </style>
 
 <template lang="wxml">
@@ -134,9 +133,7 @@
         <view class="h-modal-actions {{ actionMode }}" wx:if="{{ actions.length }}">
           <view class="h-modal-actions-item" wx:for="{{ actions }}" wx:key="{{ item.name }}">
             <view class="h-modal-actions-item-wrap" @tap="handleClickItem({{ index }}, {{ item }})">
-              <view class="i-modal-btn-loading" wx:if="{{ item.loading }}"></view>
-              <view wx:if="{{ item.icon }}" type="{{ item.icon }}" class="i-modal-btn-icon"></view>
-              <view class="i-modal-btn-text" style="{{ item.color ? 'color: ' + item.color : '' }}">{{ item.name }}</view>
+              <view class="h-modal-btn-text" style="{{ item.color ? 'color: ' + item.color : '' }}">{{ item.name }}</view>
             </view>
           </view>
         </view>
