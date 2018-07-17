@@ -1,8 +1,4 @@
 <style lang="less">
-  .btn {
-    padding: 10px 0;
-    border: 1rpx solid #eee;
-  }
   .h-modal{
     position: fixed;
     overflow: auto;
@@ -86,8 +82,9 @@
       display: flex;
 
       &-item {
-        .btn();
         flex: 1;
+        padding: 10px 0;
+    	border: 1rpx solid #eee;
       }
       &-item {
         border-right: none;
