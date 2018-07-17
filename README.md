@@ -46,7 +46,7 @@
 
 <script>
   import wepy from 'wepy';
-  import modal from '../components/test/modal';
+  import modal from 'wepy-modal';
 
   export default class ModalStudy extends wepy.page {
     data = {
@@ -92,7 +92,7 @@
 
 <script>
   import wepy from 'wepy';
-  import modal from '../components/test/modal';
+  import modal from 'wepy-modal';
 
   export default class ModalStudy extends wepy.page {
     data = {
