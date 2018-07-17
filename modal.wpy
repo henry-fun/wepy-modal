@@ -62,6 +62,7 @@
     &-body{
       max-height: 100px;
       margin-bottom: 15px;
+      padding: 0 10px;
       font-size: 14px;
       height: 100%;
       min-height: 30px;
@@ -136,11 +137,11 @@
         </view>
         <view class="h-modal-footer" wx:else>
           <view class="h-modal-footer-wrap"  wx:if="{{ showOk || showCancel }}">
-            <view class="h-modal-footer-item" wx:if="{{ showCancel }}">
-              <view class="h-modal-footer-cancel" @tap="handleClickCancel">{{ cancelTxt }}</view>
+            <view class="h-modal-footer-item" @tap="handleClickCancel" wx:if="{{ showCancel }}">
+              <view class="h-modal-footer-cancel">{{ cancelTxt }}</view>
             </view>
-            <view class="h-modal-footer-item" wx:if="{{ showOk }}">
-              <view class="h-modal-footer-ok" @tap="handleClickOk">{{ okTxt }}</view>
+            <view class="h-modal-footer-item" @tap="handleClickOk" wx:if="{{ showOk }}">
+              <view class="h-modal-footer-ok">{{ okTxt }}</view>
             </view>
           </view>
         </view>
