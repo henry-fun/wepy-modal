@@ -172,3 +172,5 @@
   </view>
 </template>
 ```
+### 5、注意事项 ###
+1. 因为小程序的设计，[小程序textarea组件拥有最高层级](https://developers.weixin.qq.com/miniprogram/dev/component/textarea.html)，不能通过z-index限制，所以在打开modal组件时，如果页面下有textarea组件，可以使用wx:if手动把texarea组建“删掉”，不然在ios手机上会出现点击击穿bug，该问题暂时还没有合理的解决方案。
