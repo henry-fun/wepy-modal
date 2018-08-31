@@ -1,30 +1,22 @@
 <style lang="less">
-  .h-modal{
+  .h-modal {
     position: fixed;
-    overflow: auto;
+    overflow: hidden;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
     height: 100%;
     z-index: 999;
-    display: flex;
-    outline: none;
-    -webkit-box-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    justify-content: center;
     transform: translateZ(1px);
-
     opacity: 0;
     visibility: hidden;
-
-    &-show{
+    &-show {
       visibility: visible;
       opacity: 1;
     }
 
-    &-mask{
+    &-mask {
       position: fixed;
       top: 0;
       left: 0;
@@ -36,18 +28,24 @@
       opacity: 0;
       visibility: hidden;
 
-      &-show{
+      &-show {
         opacity: 1;
         visibility: visible;
       }
     }
 
-    &-main{
-      width: 270px;
+    &-main {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
       position: relative;
+      margin-bottom: 80rpx;
+      z-index: 1000;
     }
 
-    &-content{
+    &-content {
       border-radius: 7px;
       padding-top: 15px;
       position: relative;
@@ -55,11 +53,12 @@
       border: 0;
       background-clip: padding-box;
       text-align: center;
-      height: 100%;
+      width: 540rpx;
+      height: auto;
       overflow: hidden;
     }
 
-    &-body{
+    &-body {
       max-height: 100px;
       margin-bottom: 15px;
       padding: 0 15px;
@@ -70,10 +69,10 @@
       overflow: auto;
     }
 
-    &-title{
+    &-title {
       padding: 6px 15px 15px;
       margin: 0;
-      font-size: 18px;
+      font-size: 38rpx;
       line-height: 1;
       color: #333;
       text-align: center;
@@ -120,8 +119,8 @@
 </style>
 
 <template lang="wxml">
-  <view class="h-modal-mask {{ visible ? 'h-modal-mask-show' : '' }}"></view>
-  <view class="h-modal {{ visible ? 'h-modal-show' : '' }}">
+  <view class="h-modal {{ visible ? 'h-modal-show' : '' }} {{ className ? className : ''}}">
+    <view class="h-modal-mask {{ visible ? 'h-modal-mask-show' : '' }}"></view>
     <view class="h-modal-main">
       <view class="h-modal-content">
         <view class="h-modal-title" wx:if="{{ title }}">{{ title }}</view>
@@ -154,6 +153,10 @@
   import wepy from 'wepy';
   export default class Modal extends wepy.component {
     props = {
+      className: {
+        type: String,
+        default: ''
+      },
       title: {
         type: String,
         default: ''
