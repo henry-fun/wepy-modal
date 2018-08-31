@@ -72,6 +72,7 @@
   <view class="container">
     <modal
       title="modal测试"
+      className="modal-test"
       :cancelTxt.sync="cancelTxt"
       :okTxt.sync="okTxt"
       :visible.sync="modalVisible"
@@ -136,6 +137,7 @@
 | 属性/方法   | 说明    |  类型  |默认值|
 | --------   | -----   | ---- |---- |
 | visible | modal的显示与隐藏      |   Boolean |false|
+| className | modal的class命名      |   String |false|
 | title | modal的标题文字(没有则不显示title)      |   String |''|
 | cancelTxt | 取消按钮自定义文字      |   String |取消|
 | okTxt | 确定按钮自定义文字      |   String |确定|
@@ -154,6 +156,7 @@
     
     <modal
       title="modal测试"
+      className="modal-test"
       :cancelTxt.sync="cancelTxt"
       :okTxt.sync="okTxt"
       :visible.sync="modalVisible"
