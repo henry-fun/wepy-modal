@@ -1,5 +1,8 @@
 <style lang="less">
   .h-modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: fixed;
     overflow: hidden;
     top: 0;
@@ -134,6 +137,9 @@
             </view>
           </view>
         </view>
+         <view wx:elif="{{showButtons}}">
+          <slot name="buttons"></slot>
+        </view>
         <view class="h-modal-footer" wx:else>
           <view class="h-modal-footer-wrap"  wx:if="{{ showOk || showCancel }}">
             <view class="h-modal-footer-item" @tap="handleClickCancel" wx:if="{{ showCancel }}">
@@ -184,6 +190,10 @@
       actions: {
         type: Array,
         default: []
+      },
+      showButtons: {
+        type: Boolean,
+        default: false
       },
       visible: {
         type: Boolean,
