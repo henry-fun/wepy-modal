@@ -73,6 +73,7 @@
     <modal
       title="modal测试"
       className="modal-test"
+      :showButtons.sync="showButtons"
       :cancelTxt.sync="cancelTxt"
       :okTxt.sync="okTxt"
       :visible.sync="modalVisible"
@@ -98,6 +99,7 @@
   export default class ModalStudy extends wepy.page {
     data = {
       modalVisible: false,
+      showButtons:false,
       cancelTxt: '关闭',
       okTxt: '确定',
       showOk: true,
@@ -139,6 +141,7 @@
 | visible | modal的显示与隐藏      |   Boolean |false|
 | className | modal的class命名      |   String |false|
 | title | modal的标题文字(没有则不显示title)      |   String |''|
+| showButtons | 是否显示自定义按钮      |   Boolean |false|
 | cancelTxt | 取消按钮自定义文字      |   String |取消|
 | okTxt | 确定按钮自定义文字      |   String |确定|
 | showOk | 是否展示【确定】按钮      |   Boolean |true|
@@ -157,6 +160,7 @@
     <modal
       title="modal测试"
       className="modal-test"
+      :showButtons.sync="showButtons"
       :cancelTxt.sync="cancelTxt"
       :okTxt.sync="okTxt"
       :visible.sync="modalVisible"
@@ -171,9 +175,12 @@
       <view slot="body">
         <view>自定义body内容填充区</view>
       </view>
+      <view slot="buttons">
+         <view>自定义button填充区</view>
+      </view>
     </modal>
   </view>
 </template>
 ```
 ### 5、注意事项 ###
-1. 因为小程序的设计，[小程序textarea组件拥有最高层级](https://developers.weixin.qq.com/miniprogram/dev/component/textarea.html)，不能通过z-index限制，所以在打开modal组件时，如果页面下有textarea组件，可以使用wx:if手动把texarea组建“删掉”，不然在ios手机上会出现点击击穿bug，该问题暂时还没有合理的解决方案。
+1. 因为小程序的设计，[小程序textarea组件拥有最高层级](https://developers.weixin.qq.com/miniprogram/dev/component/textarea.html)，不能通过z-index限制，所以在打开modal组件时，如果页面下有textarea组件，可以使用wx:if手动把texarea组建“删掉”，不然在ios手机上会出现点击击穿bug，该问题暂时还没有合理的解决方案。 当showButtons=true时，其他按钮不显示
